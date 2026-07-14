@@ -55,14 +55,18 @@ Update `.env` with your MongoDB connection string:
 
 ```text
 PORT=3000
+MONGODB_URI=mongodb+srv://xbuchanz:<db_password>@xbuchanz-dev.rcutwd8.mongodb.net/task_management_api?appName=xbuchanz-dev
+```
+
+Replace `<db_password>` with the password for the `xbuchanz` database user. Keep the database name `task_management_api` before the `?appName` part so this project stores tasks in the correct database.
+
+For local MongoDB, the URI would look like:
+
+```text
 MONGODB_URI=mongodb://127.0.0.1:27017/task_management_api
 ```
 
-For MongoDB Atlas, the URI will look similar to:
-
-```text
-MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@cluster0.example.mongodb.net/task_management_api
-```
+Do not commit your real `.env` file. It is intentionally ignored by Git.
 
 Run the API:
 

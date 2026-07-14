@@ -33,6 +33,7 @@ Submit these files:
 3. Run `npm install`.
 4. Copy `.env.example` to `.env`.
 5. Add your MongoDB connection string to `MONGODB_URI`.
+   Example: `mongodb+srv://xbuchanz:<db_password>@xbuchanz-dev.rcutwd8.mongodb.net/task_management_api?appName=xbuchanz-dev`
 6. Run `npm run seed` to insert sample data.
 7. Run `npm run dev` or `npm start`.
 8. Test the API at `http://localhost:3000/api/v1/tasks`.
