@@ -1,0 +1,35 @@
+{
+  "tasks": [
+    {
+      "id": "tsk_001",
+      "title": "Finish API design exercise",
+      "description": "Create endpoints, sample payloads, and documentation.",
+      "status": "in_progress",
+      "priority": "high",
+      "dueDate": "2026-07-16",
+      "createdAt": "2026-07-14T10:00:00Z",
+      "updatedAt": "2026-07-14T10:30:00Z"
+    },
+    {
+      "id": "tsk_002",
+      "title": "Buy notebook",
+      "description": "Pick up a notebook for class notes.",
+      "status": "todo",
+      "priority": "low",
+      "dueDate": "2026-07-18",
+      "createdAt": "2026-07-14T11:15:00Z",
+      "updatedAt": "2026-07-14T11:15:00Z"
+    },
+    {
+      "id": "tsk_003",
+      "title": "Submit project reflection",
+      "description": "Write a short reflection about API design decisions.",
+      "status": "done",
+      "priority": "medium",
+      "dueDate": "2026-07-15",
+      "createdAt": "2026-07-13T09:20:00Z",
+      "updatedAt": "2026-07-14T12:00:00Z"
+    }
+  ]
+}
+
