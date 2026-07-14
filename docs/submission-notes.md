@@ -4,17 +4,17 @@
 
 Submit these files:
 
-1. `task-api-documentation.md`
-2. `task-api-postman-collection.json`
+1. `api-documentation.md`
+2. `postman-collection.json`
 3. `openapi.yaml`
-4. `mock-tasks.json`
+4. `sample-tasks.json`
 5. The `src/` folder, `package.json`, `.env.example`, and `README.md` if the instructor wants the MongoDB implementation.
 
 ## How to Create the Postman Mock API
 
 1. Open Postman.
 2. Click **Import**.
-3. Import `task-api-postman-collection.json`.
+3. Import `postman-collection.json`.
 4. Open the imported collection.
 5. Click the collection menu and choose **Mock collection**.
 6. Let Postman generate a mock server URL.

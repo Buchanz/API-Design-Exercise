@@ -19,6 +19,15 @@ function formatDate(value) {
   return new Date(value).toLocaleDateString();
 }
 
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 async function requestJson(url, options = {}) {
   const response = await fetch(url, {
     headers: {
@@ -50,11 +59,11 @@ function renderTasks(tasks) {
     const card = document.createElement("article");
     card.className = "task-card";
     card.innerHTML = `
-      <h3>${task.title}</h3>
-      <p>${task.description || "No description provided."}</p>
+      <h3>${escapeHtml(task.title)}</h3>
+      <p>${escapeHtml(task.description || "No description provided.")}</p>
       <div class="meta-row">
-        <span class="pill">Status: ${formatLabel(task.status)}</span>
-        <span class="pill">Priority: ${task.priority}</span>
+        <span class="pill">Status: ${escapeHtml(formatLabel(task.status))}</span>
+        <span class="pill">Priority: ${escapeHtml(task.priority)}</span>
         <span class="pill">Due: ${formatDate(task.dueDate)}</span>
       </div>
       <div class="actions">
