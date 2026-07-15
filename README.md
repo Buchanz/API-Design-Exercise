@@ -59,5 +59,6 @@ Additional assignment documentation is in the `docs/` folder:
 - `api-documentation.md`
 - `openapi.yaml`
 - `postman-collection.json`
+- `rubric-checklist.md`
 - `sample-tasks.json`
 - `submission-notes.md`
