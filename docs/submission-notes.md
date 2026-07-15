@@ -8,7 +8,7 @@ Submit these files:
 2. `postman-collection.json`
 3. `openapi.yaml`
 4. `sample-tasks.json`
-5. The `src/` folder, `package.json`, `.env.example`, and `README.md` if the instructor wants the MongoDB implementation.
+5. The `src/` folder, `package.json`, and `README.md` if the instructor wants the MongoDB implementation.
 
 ## How to Create the Postman Mock API
 
@@ -31,7 +31,7 @@ Submit these files:
 1. Install Node.js.
 2. Create a MongoDB database using local MongoDB or MongoDB Atlas.
 3. Run `npm install`.
-4. Copy `.env.example` to `.env`.
+4. Create a local `.env` file.
 5. Add your MongoDB connection string to `MONGODB_URI`.
    Example: `mongodb+srv://<username>:<password>@<cluster-url>/task_management_api?retryWrites=true&w=majority`
 6. Run `npm run seed` to insert sample data.

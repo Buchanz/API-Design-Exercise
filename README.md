@@ -17,13 +17,14 @@ Install dependencies:
 npm install
 ```
 
-Create a local `.env` file:
+Create a local `.env` file and add your MongoDB connection string:
 
-```bash
-cp .env.example .env
+```text
+PORT=3000
+MONGODB_URI=your_mongodb_connection_string
 ```
 
-Add your MongoDB password to `.env`, then seed and start the API:
+Then seed and start the API:
 
 ```bash
 npm run seed
