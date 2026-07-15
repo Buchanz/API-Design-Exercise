@@ -1,14 +1,17 @@
 # Task Management API
 
-A small RESTful task management app built with Node.js, Express, MongoDB, and Mongoose. It includes a simple browser interface for testing the API without needing Postman.
+A small RESTful API for managing tasks, built with Node.js, Express, MongoDB Atlas, and Mongoose.
+
+This project was created for an API design exercise. It includes a working backend, sample data, written API documentation, an OpenAPI file, and a Postman collection.
 
 ## Features
 
-- Create, view, update, and delete tasks
-- Store tasks in MongoDB Atlas
-- Filter tasks by status or priority through the API
-- Test the app through a basic browser UI
-- Import the included Postman collection for mock/API testing
+- Create, read, update, and delete tasks
+- Store task data in MongoDB Atlas
+- Validate task status and priority values
+- Filter tasks by status or priority
+- Return consistent JSON error responses
+- Provide API documentation and Postman examples
 
 ## Tech Stack
 
@@ -16,14 +19,14 @@ A small RESTful task management app built with Node.js, Express, MongoDB, and Mo
 - Express
 - MongoDB Atlas
 - Mongoose
-- HTML, CSS, and JavaScript
+- Postman
+- OpenAPI
 
 ## Project Structure
 
 ```text
 .
 ├── docs/                 API documentation, OpenAPI file, and Postman collection
-├── public/               Basic browser UI
 ├── src/                  Express API source code
 │   ├── config/           MongoDB connection
 │   ├── controllers/      Request handlers
@@ -31,6 +34,8 @@ A small RESTful task management app built with Node.js, Express, MongoDB, and Mo
 │   ├── models/           Mongoose task model
 │   └── routes/           API routes
 ├── .env.example          Example environment variables
+├── .gitignore            Files excluded from Git
+├── package-lock.json     Locked dependency versions
 ├── package.json          Project scripts and dependencies
 └── README.md
 ```
@@ -56,7 +61,9 @@ PORT=3000
 MONGODB_URI=mongodb+srv://xbuchanz:<db_password>@xbuchanz-dev.rcutwd8.mongodb.net/task_management_api?appName=xbuchanz-dev
 ```
 
-Replace `<db_password>` with the password for the `xbuchanz` MongoDB database user. Do not commit the real `.env` file.
+Replace `<db_password>` with the password for the `xbuchanz` MongoDB database user.
+
+Important: do not commit the real `.env` file. It is ignored by Git.
 
 Seed the database with sample tasks:
 
@@ -78,19 +85,25 @@ npm run dev
 
 ## Testing
 
-Open the browser UI:
+After starting the server, the API runs at:
 
 ```text
 http://localhost:3000
 ```
 
-Test the API directly:
+Check the API status:
+
+```bash
+curl http://localhost:3000
+```
+
+Get all tasks:
 
 ```bash
 curl http://localhost:3000/api/v1/tasks
 ```
 
-Create a task with curl:
+Create a task:
 
 ```bash
 curl -X POST http://localhost:3000/api/v1/tasks \
@@ -98,11 +111,21 @@ curl -X POST http://localhost:3000/api/v1/tasks \
   -d '{"title":"Test the API","description":"Create a task from curl","status":"todo","priority":"medium","dueDate":"2026-07-20"}'
 ```
 
-Use Postman:
+Update a task:
 
-1. Open Postman.
-2. Import `docs/postman-collection.json`.
-3. Run the included requests against `http://localhost:3000/api/v1`.
+```bash
+curl -X PATCH http://localhost:3000/api/v1/tasks/<task_id> \
+  -H "Content-Type: application/json" \
+  -d '{"status":"done"}'
+```
+
+Delete a task:
+
+```bash
+curl -X DELETE http://localhost:3000/api/v1/tasks/<task_id>
+```
+
+You can also import `docs/postman-collection.json` into Postman and run the included requests.
 
 ## API Endpoints
 
